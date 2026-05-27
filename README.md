@@ -375,3 +375,182 @@ gcc src/*.c -o pacman \
 # Créditos
 
 Proyecto académico para la materia de Fundamentos de Programación.
+
+
+
+# Sugerencias
+
+# Código Base Sugerido
+
+---
+
+## player.h
+
+```c
+#ifndef PLAYER_H
+#define PLAYER_H
+
+typedef struct {
+
+    int x;
+    int y;
+
+    int width;
+    int height;
+
+    int speed;
+
+    int score;
+    int lives;
+
+} Player;
+
+void initPlayer(Player *player);
+
+void movePlayer(
+    Player *player,
+    int dx,
+    int dy,
+    char mapa[][28]
+);
+
+void renderPlayer(Player *player);
+
+#endif
+```
+
+---
+
+## player.c
+
+```c
+#include "player.h"
+
+void initPlayer(Player *player)
+{
+    /*
+        TODO:
+        Inicializar jugador
+    */
+}
+
+void movePlayer(
+    Player *player,
+    int dx,
+    int dy,
+    char mapa[][28]
+)
+{
+    /*
+        TODO:
+        Movimiento del jugador
+    */
+
+    /*
+        TODO:
+        Colisiones con paredes
+    */
+
+    /*
+        TODO:
+        Consumir pellets
+    */
+}
+
+void renderPlayer(Player *player)
+{
+    /*
+        TODO:
+        Dibujar jugador usando SDL2
+    */
+}
+```
+
+---
+
+## ghost.h
+
+```c
+#ifndef GHOST_H
+#define GHOST_H
+
+typedef struct {
+
+    int x;
+    int y;
+
+    int direction;
+
+    int speed;
+
+} Ghost;
+
+void initGhost(
+    Ghost *ghost,
+    int x,
+    int y
+);
+
+void moveGhost(
+    Ghost *ghost,
+    int playerX,
+    int playerY,
+    char mapa[][28]
+);
+
+void renderGhost(Ghost *ghost);
+
+#endif
+```
+
+---
+
+## ghost.c
+
+```c
+#include "ghost.h"
+
+void initGhost(
+    Ghost *ghost,
+    int x,
+    int y
+)
+{
+    /*
+        TODO:
+        Inicializar fantasma
+    */
+}
+
+void moveGhost(
+    Ghost *ghost,
+    int playerX,
+    int playerY,
+    char mapa[][28]
+)
+{
+    /*
+        TODO:
+        Implementar reglas simples
+        de persecución
+    */
+
+    /*
+        TODO:
+        Evitar paredes
+    */
+
+    /*
+        TODO:
+        Movimiento alternativo
+    */
+}
+
+void renderGhost(Ghost *ghost)
+{
+    /*
+        TODO:
+        Dibujar fantasma usando SDL2
+    */
+}
+```
